@@ -1,0 +1,6 @@
+from sklearn.metrics import cohen_kappa_score
+
+y1 = ["compound:lvc", "compound:lvc", "advmod", "advmod", "advmod", "advmod", "advmod", "advmod", "advmod", "advmod", "advmod", "advmod", "advmod", "advmod", "advmod", "advmod", "advmod", "advmod", "advmod", "advmod", "advcl", "advcl", "advcl", "advcl", "advcl", "advcl", "advcl", "advcl", "advcl", "advcl", "advcl", "advcl", "advcl", "amod", "amod", "amod", "amod", "amod", "amod", "ccomp", "ccomp", "advcl", "advmod"]
+y2 = ["compound:lvc", "compound:lvc", "advmod", "advmod", "advmod", "advmod", "advmod", "advmod", "advmod", "advmod", "advmod", "advmod", "advmod", "advmod", "advmod", "advmod", "advmod", "advmod", "advmod", "advmod", "advcl", "advcl", "advcl", "advcl", "advcl", "advcl", "advcl", "advcl", "advcl", "advcl", "advcl", "advcl", "advcl", "amod", "amod", "amod", "amod", "amod", "acl", "advcl", "advcl", "advmod", "obj"]
+
+cohen_kappa_score(y1, y2)
