@@ -1,0 +1,35 @@
+# Bar-chart for the frequency distribution of dependency labels
+
+import matplotlib.pyplot as plt
+
+# Data
+labels = ['advmod', 'advcl', 'amod', 'nsubj', 'obl', 'root', 'compound:lvc', 
+          'conj', 'nmod:poss', 'ccomp', 'obj', 'acl', 'discourse', 'nsubj:pass']
+values = [40, 18, 7, 5, 4, 4, 3, 2, 2, 2, 1, 1, 1, 1]
+
+# Sort data by value (descending)
+sorted_data = sorted(zip(values, labels), reverse=True)
+values_sorted = [x[0] for x in sorted_data]
+labels_sorted = [x[1] for x in sorted_data]
+
+# Create bar chart
+plt.figure(figsize=(12, 6))
+bars = plt.bar(labels_sorted, values_sorted, color='#66b3ff', edgecolor='white')
+
+# Add value labels on bars
+for bar in bars:
+    height = bar.get_height()
+    plt.text(bar.get_x() + bar.get_width()/2., height,
+             f'{height}',
+             ha='center', va='bottom')
+
+# Formatting
+plt.title('Dependency Relation Frequency', fontsize=14, pad=20)
+plt.xlabel('Dependency Type', fontsize=12)
+plt.ylabel('Count', fontsize=12)
+plt.xticks(rotation=45, ha='right')
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+
+# Adjust layout
+plt.tight_layout()
+plt.show()
